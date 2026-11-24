@@ -1,0 +1,11 @@
+DirectoryIndex index.php index.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# Redirect direct requests to .html to .php
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/([^.]+)\.html [NC]
+RewriteRule ^ %1.php [R=301,L]
+</IfModule>
+
